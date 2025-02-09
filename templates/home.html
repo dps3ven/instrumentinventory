@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guitar Inventory</title>
+        <link href="../static/styles.css" rel="stylesheet" />
+    </head>
+<body>
+    <h1>Guitar Inventory</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Strings</th>
+                <th>Pickups</th>
+                <th>Serial Number</th>
+                <th>Condition</th>
+                <th>Year</th>
+                <th>Picture</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for id, guitar in guitars.items() %}
+            <tr>
+                <td>{{ id }}</td>
+                <td>{{ guitar.make }}</td>
+                <td>{{ guitar.model }}</td>
+                <td>{{ guitar.color }}</td>
+                <td>{{ guitar.strings }}</td>
+                <td>{{ guitar.pickups }}</td>
+                <td>{{ guitar.serial_number }}</td>
+                <td>{{ guitar.shape }}</td>
+                <td>{{ guitar.year }}</td>""
+                <td><img src="/static/images/{{ guitar.picture }}"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
